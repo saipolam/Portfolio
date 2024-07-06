@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Polam's Biodata</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="profile.jpg" alt="Sai Polam">
+                <h1>Sai Polam</h1>
+                <p>Student</p>
+                <p>Rajahmundry, Andhra Pradesh</p>
+                <a href="mailto:saipolam0222@hotmail.com" class="contact-button">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <section id="summary" class="summary">
+                <h2>Summary</h2>
+                <p>Skilled multitasker with superior work ethic and good teamwork, problem-solving, and organizational skills. Willing to take on any task to help team. Reliable and dedicated team player with hardworking and resourceful approach.</p>
+            </section>
+
+            <section id="overview" class="overview">
+                <h2>About</h2>
+                <div class="overview-cards">
+                    <div class="card" onclick="scrollToCertificates()">
+                        <p>Certificates</p>
+                    </div>
+                    <div class="card" onclick="scrollToEducation()">
+                        <p>Education</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="work-history" class="work-history">
+                <h2>Work History</h2>
+                <div class="job">
+                    <h3>Intern</h3>
+                    <p>HQL EduTech</p>
+                    <p>May 2023 - June 2023</p>
+                </div>
+            </section>
+
+            <section id="education-section" class="education-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Technology - Computer Science And Engineering</h3>
+                    <p>BVC College of Engineering, Rajahmundry, India</p>
+                    <p>May 2021 - Present</p>
+                </div>
+                <div class="education-item">
+                    <h3>Intermediate - MPC</h3>
+                    <p>Tirumala Junior Kalasala, Rajahmundry, India</p>
+                    <p>June 2019 - April 2021</p>
+                </div>
+                <div class="education-item">
+                    <h3>10th Class</h3>
+                    <p>Tirumala Proactive (EM) High School, Rajahmundry, India</p>
+                    <p>June 2018 - April 2019</p>
+                </div>
+            </section>
+
+            <section id="skills" class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Teamwork and Collaboration</li>
+                    <li>Computer Skills</li>
+                    <li>Problem-solving abilities</li>
+                    <li>Active Listening</li>
+                    <li>Decision-Making</li>
+                    <li>Java</li>
+                </ul>
+            </section>
+
+            <section id="affiliations" class="affiliations">
+                <h2>Affiliations</h2>
+                <p>International Association of Engineers</p>
+            </section>
+
+            <section id="languages" class="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li>Telugu</li>
+                    <li>English</li>
+                    <li>Hindi</li>
+                </ul>
+            </section>
+
+            <section id="certification" class="certification">
+                <h2>Certification</h2>
+                <p>JavaScript-basic, HackerRank - 5th June 2023</p>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>Mini Projects</h2>
+                <p>Created a CGPA calculator using AI tools and published it free on GitHub: <a href="https://saipolam.github.io/cgpa/" target="_blank">https://saipolam.github.io/cgpa/</a></p>
+            </section>
+
+            <section id="accomplishments" class="accomplishments">
+                <h2>Accomplishments</h2>
+                <p>Used ChatGPT to develop SGPA-CGPA Calculator website.</p>
+            </section>
+
+            <section id="software" class="software">
+                <h2>Software</h2>
+                <p>Tools: Java, HTML, CSS, JavaScript, ChatGPT</p>
+            </section>
+
+            <section id="certificates-section" class="certificates-gallery">
+                <h2>Certificates</h2>
+                <img src="C:\Users\saipo\Downloads\biodata\java programming (2)_page-0001 (1).jpg" alt="Java Programming, Oracle, February 2023" class="certificate" onclick="enlargeImage(this)">
+                <img src="C:\Users\saipo\Downloads\biodata\java_basic certificate (1)_page-0001.jpg" alt="Programming in Java, NPTEL, April 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="C:\Users\saipo\Downloads\biodata\Micro-Certification20-20Welcome20to20ServiceNow (1)_page-0001 (2).jpg" alt="Micro certification in welcome to ServiceNow, ServiceNow, June 2024" class="certificate" onclick="enlargeImage(this)">
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sai Polam. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal for enlarging images -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function scrollToEducation() {
+            var educationSection = document.getElementById("education-section");
+            educationSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToCertificates() {
+            var certificatesSection = document.getElementById("certificates-section");
+            certificatesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enlargeImage(img) {
+            var modal = document.getElementById("image-modal");
+            var modalImg = document.getElementById("modal-image");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
