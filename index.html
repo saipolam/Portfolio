@@ -10,7 +10,7 @@
     <header>
         <div class="container">
             <div class="profile">
-                <img src="profile.jpg" alt="Sai Polam">
+                <img src="images/IMG_20240628_133332.jpg" alt="Sai Polam">
                 <h1>Sai Polam</h1>
                 <p>Student</p>
                 <p>Rajahmundry, Andhra Pradesh</p>
@@ -34,6 +34,9 @@
                     </div>
                     <div class="card" onclick="scrollToEducation()">
                         <p>Education</p>
+                    </div>
+                     <div class="card" onclick="scrollToAffiliations()">
+                        <p>Affiliations</p>
                     </div>
                 </div>
             </section>
@@ -115,8 +118,11 @@
             <section id="certificates-section" class="certificates-gallery">
                 <h2>Certificates</h2>
                 <img src="images/java programming (2)_page-0001.jpg" alt="Java Programming, Oracle, February 2023" class="certificate" onclick="enlargeImage(this)">
-                <img src="https://github.com/saipolam/Portfolio/blob/368d70d6d85a40561a480e2725efe900b8115130/images/java_basic%20certificate%20(1)_page-0001.jpg" alt="Programming in Java, NPTEL, April 2024" class="certificate" onclick="enlargeImage(this)">
-                <img src="C:\Users\saipo\Downloads\biodata\Micro-Certification20-20Welcome20to20ServiceNow (1)_page-0001 (2).jpg" alt="Micro certification in welcome to ServiceNow, ServiceNow, June 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/NPTEL_page-0001.jpg" alt="Programming in Java, NPTEL, April 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/Micro-Certification20-20Welcome20to20ServiceNow (1)_page-0001 (2).jpg" alt="Micro certification in welcome to ServiceNow, ServiceNow, June 2024" class="certificate" onclick="enlargeImage(this)">
+                 <img src="images/image.png" alt="Java script basic,Hackerrank, june 2023" class="certificate" onclick="enlargeImage(this)">
+                 <img src="images/java_basic certificate (1)_page-0001.jpg" alt="Java basic, Hackerrank, February 2024" class="certificate" onclick="enlargeImage(this)">
+                
             </section>
         </div>
     </div>
@@ -142,7 +148,10 @@
             var certificatesSection = document.getElementById("certificates-section");
             certificatesSection.scrollIntoView({ behavior: 'smooth' });
         }
-
+         function scrollToAffiliations() {
+            var affiliationsSection = document.getElementById("affiliations-section");
+            affiliationsSection.scrollIntoView({ behavior: 'smooth' });
+        }
         function enlargeImage(img) {
             var modal = document.getElementById("image-modal");
             var modalImg = document.getElementById("modal-image");
