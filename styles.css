@@ -94,7 +94,7 @@ header {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-.affiliation-sections img.affiliations-sections {
+.affiliations-section img.affiliations-sections {
     width: 100px;
     height: auto;
     margin: 10px;
@@ -102,7 +102,7 @@ header {
     border: 2px solid #0073e6;
     border-radius: 5px;
     transition: transform 0.2s;}
-.affiliation-sections img.affiliations-sections:hover{
+.affiliations-section img.affiliations-sections:hover{
     transform:scale(1.1);}
 
 /* Certificates */
