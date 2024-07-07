@@ -94,7 +94,7 @@ header {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-.internship img.internship{
+.internships img.internship{
     width: 100px;
     height: auto;
     margin: 10px;
@@ -103,7 +103,7 @@ header {
     border-radius: 5px;
     transition: transform 0.2s;
 }
-.internship img.internship:hover{
+.internships img.internship:hover{
     transform:scale(1.1);}
 
 .affiliations-section img.affiliations-sections {
