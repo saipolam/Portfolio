@@ -31,7 +31,7 @@
                      <div class="card" onclick="scrollToCertificates()">
                         <p>Certificates</p>
                     </div>
-                     <div class="card" onclick="scrollTointernships()">
+                     <div class="card" onclick="scrollToInternships()">
                         <p>Internships</p>
                     </div>
                      <div class="card" onclick="scrollToAffiliations()">
@@ -40,7 +40,7 @@
                 </div>
             </section>
 
-            <section id="internships" class="internships">
+            <section id="internship" class="internships">
                 <h2>Internships</h2>
                 
                 <img src="images/216M1A05A0_page-0001.jpg" alt="HQL Edutech" class="internship" onclick="enlargeImage(this)">
@@ -137,6 +137,10 @@
     </div>
 
     <script>
+        function scrollToInternships(){
+             var internshipSection=document.getElementById("internship");
+             internshipSection.scrollIntoView({behavior:'smooth'});
+}
         function scrollToEducation() {
             var educationSection = document.getElementById("education-section");
             educationSection.scrollIntoView({ behavior: 'smooth' });
