@@ -5,117 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Polam</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <h1 id="typed-name"></h1>
+                <p>Computer Science Student</p>
+                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            </div>
+        </div>
+    </header>
 
-<header>
     <div class="container">
-        <div class="profile">
-            <h1 id="typed-name"></h1>
-            <p>Computer Science Student</p>
-            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <div class="content">
+            <section id="overview" class="overview">
+                <h2>About Me</h2>
+                <div class="overview-cards">
+                    <div class="card" onclick="scrollToSection('education-section')">
+                        <p>Education</p>
+                    </div>
+                    <div class="card" onclick="scrollToSection('certificates-section')">
+                        <p>Certificates</p>
+                    </div>
+                    <div class="card" onclick="scrollToSection('internship')">
+                        <p>Internships</p>
+                    </div>
+                    <div class="card" onclick="scrollToSection('affiliations-section')">
+                        <p>Affiliations</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="skills">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <p>Java</p>
+                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+                </div>
+                <div class="skill">
+                    <p>Problem Solving</p>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+            </section>
+
+            <section id="certificates-section" class="certificates-gallery">
+                <h2>Certificates</h2>
+                <input type="text" id="filter-input" placeholder="Search Certificates..." onkeyup="filterCertificates()">
+                <div id="certificate-container">
+                    <img src="images/java_programming.jpg" alt="Java Programming" class="certificate" onclick="enlargeImage(this)">
+                    <img src="images/nptel.jpg" alt="NPTEL Java" class="certificate" onclick="enlargeImage(this)">
+                </div>
+            </section>
         </div>
     </div>
-</header>
 
-<div class="container">
-    <div class="content">
-        <section id="overview" class="overview">
-            <h2 data-aos="fade-down">About Me</h2>
-            <div class="overview-cards">
-                <div class="card" onclick="scrollToSection('education-section')" data-aos="fade-up">
-                    <p>Education</p>
-                </div>
-                <div class="card" onclick="scrollToSection('certificates-section')" data-aos="fade-up">
-                    <p>Certificates</p>
-                </div>
-                <div class="card" onclick="scrollToSection('internship')" data-aos="fade-up">
-                    <p>Internships</p>
-                </div>
-                <div class="card" onclick="scrollToSection('affiliations-section')" data-aos="fade-up">
-                    <p>Affiliations</p>
-                </div>
-            </div>
-        </section>
+    <footer>
+        <a href="#contact" class="contact-button">Contact Me</a>
+        <p>&copy; 2024 Sai Polam. All Rights Reserved.</p>
+    </footer>
 
-        <section id="skills" class="skills">
-            <h2 data-aos="fade-down">Skills</h2>
-            <div class="skill" data-aos="fade-right">
-                <p>Java</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 0%;" data-progress="80%"></div>
-                </div>
-            </div>
-            <div class="skill" data-aos="fade-right">
-                <p>Problem Solving</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 0%;" data-progress="85%"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certificates-section" class="certificates-gallery">
-            <h2 data-aos="fade-down">Certificates</h2>
-            <input type="text" id="filter-input" placeholder="Search Certificates..." onkeyup="filterCertificates()">
-            <div id="certificate-container">
-                <img src="images/java_programming.jpg" alt="Java Programming" class="certificate" onclick="enlargeImage(this)" data-aos="zoom-in">
-                <img src="images/nptel.jpg" alt="NPTEL Java" class="certificate" onclick="enlargeImage(this)" data-aos="zoom-in">
-            </div>
-        </section>
-    </div>
-</div>
-
-<footer>
-    <a href="#contact" class="contact-button">Contact Me</a>
-    <p>&copy; 2024 Sai Polam. All Rights Reserved.</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
-
-<script>
-    // Initialize AOS (Animate On Scroll)
-    AOS.init();
-
-    // Typing animation
-    var typed = new Typed('#typed-name', {
-        strings: ["Sai Polam"],
-        typeSpeed: 100,
-        backSpeed: 50,
-        loop: true
-    });
-
-    // Dark mode toggle with memory
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    const body = document.body;
-
-    darkModeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
-    });
-
-    if (localStorage.getItem("darkMode") === "true") {
-        body.classList.add("dark-mode");
-    }
-
-    // Smooth scrolling
-    function scrollToSection(sectionId) {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Animated skill bars
-    window.addEventListener('scroll', () => {
-        document.querySelectorAll('.progress-bar').forEach((bar) => {
-            const rect = bar.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                bar.style.width = bar.getAttribute('data-progress');
-            }
-        });
-    });
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
