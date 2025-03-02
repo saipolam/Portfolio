@@ -1,19 +1,42 @@
+// Smooth scrolling to sections
 function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
+// Certificate search filter
+function filterCertificates() {
+    const input = document.getElementById("filter-input").value.toUpperCase();
+    const certificates = document.querySelectorAll(".certificate");
+
+    certificates.forEach((cert) => {
+        const altText = cert.alt.toUpperCase();
+        cert.style.display = altText.includes(input) ? "" : "none";
+    });
+}
+
+// Enlarge certificate image
 function enlargeImage(img) {
-    var modal = document.getElementById("image-modal");
-    var modalImg = document.getElementById("modal-image");
-    var captionText = document.getElementById("caption");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.onclick = () => overlay.remove();
 
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    captionText.innerHTML = img.alt;
+    const enlargedImg = document.createElement("img");
+    enlargedImg.src = img.src;
+    enlargedImg.classList.add("enlarged-image");
+
+    overlay.appendChild(enlargedImg);
+    document.body.appendChild(overlay);
 }
 
-function closeModal() {
-    var modal = document.getElementById("image-modal");
-    modal.style.display = "none";
-}
+// Animate skill bars on scroll
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.progress-bar').forEach((bar) => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            bar.style.width = bar.getAttribute('data-progress');
+        }
+    });
+});
