@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Polam</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="profile">
-                <h1 id="typed-name"></h1>
+                <h1>Sai Polam</h1>
                 <p>Computer Science Student</p>
-                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                
             </div>
         </div>
     </header>
@@ -38,34 +37,106 @@
                 </div>
             </section>
 
+            <section id="internship" class="internships">
+                <h2>Internships</h2>
+                <img src="images/216M1A05A0_page-0001.jpg" alt="HQL Edutech" class="internship" onclick="enlargeImage(this)">
+            </section>
+
+            <section id="education-section" class="education-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Technology - Computer Science And Engineering</h3>
+                    <p>BVC College of Engineering, Rajahmundry, India</p>
+                    <p>May 2021 - Present</p>
+                    <p>7.01 GPA</p>
+                </div>
+                <div class="education-item">
+                    <h3>Intermediate - MPC</h3>
+                    <p>Tirumala Junior Kalasala, Rajahmundry, India</p>
+                    <p>June 2019 - April 2021</p>
+                    <p>972/1000</p>
+                </div>
+                <div class="education-item">
+                    <h3>10th Class</h3>
+                    <p>Tirumala Proactive (EM) High School, Rajahmundry, India</p>
+                    <p>June 2018 - April 2019</p>
+                    <p>10 GPA</p>
+                </div>
+            </section>
+
             <section id="skills" class="skills">
                 <h2>Skills</h2>
-                <div class="skill">
-                    <p>Java</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
-                </div>
-                <div class="skill">
-                    <p>Problem Solving</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-                </div>
+                <ul>
+                    <li>Teamwork and Collaboration</li>
+                    <li>Computer Skills</li>
+                    <li>Problem-solving abilities</li>
+                    <li>Active Listening</li>
+                    <li>Decision-Making</li>
+                    <li>Java</li>
+                </ul>
+            </section>
+
+            <section id="affiliations-section" class="affiliations-section">
+                <h2>Affiliations</h2>
+                <img src="images/IAENG_membership_331229_page-0001 (1).jpg" alt="International Association of Engineers" class="affiliations-sections" onclick="enlargeImage(this)">
+            </section>
+
+            <section id="languages" class="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li>Telugu</li>
+                    <li>English</li>
+                    <li>Hindi</li>
+                </ul>
+            </section>
+
+            <section id="certification" class="certification">
+                <h2>Certification</h2>
+                <p>JavaScript-basic, HackerRank - 5th June 2023</p>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>Mini Projects</h2>
+                <p>Created a CGPA calculator using AI tools and published it free on GitHub: <a href="https://saipolam.github.io/cgpa/" target="_blank">https://saipolam.github.io/cgpa/</a></p>
+            </section>
+
+            <section id="accomplishments" class="accomplishments">
+                <h2>Accomplishments</h2>
+                <p>Used ChatGPT to develop SGPA-CGPA Calculator website.</p>
+            </section>
+
+            <section id="software" class="software">
+                <h2>Software</h2>
+                <p>Tools: Java, HTML, CSS, JavaScript, ChatGPT</p>
             </section>
 
             <section id="certificates-section" class="certificates-gallery">
                 <h2>Certificates</h2>
-                <input type="text" id="filter-input" placeholder="Search Certificates..." onkeyup="filterCertificates()">
-                <div id="certificate-container">
-                    <img src="images/java_programming.jpg" alt="Java Programming" class="certificate" onclick="enlargeImage(this)">
-                    <img src="images/nptel.jpg" alt="NPTEL Java" class="certificate" onclick="enlargeImage(this)">
-                </div>
+                <img src="images/java programming (2)_page-0001.jpg" alt="Java Programming, Oracle, February 2023" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/NPTEL_page-0001.jpg" alt="Programming in Java, NPTEL, April 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/ServiceNow20Certified20System20Administrator_page-0001.jpg" alt=" Certified System Administrator,ServiceNow, September 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/Micro-Certification20-20Welcome20to20ServiceNow (1)_page-0001 (2).jpg" alt="Micro certification in welcome to ServiceNow, ServiceNow, June 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/image.png" alt="Java script basic,Hackerrank, june 2023" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/java_basic certificate (1)_page-0001.jpg" alt="Java basic, Hackerrank, February 2024" class="certificate" onclick="enlargeImage(this)">
+                <img src="images/Cloud Computing_page-0001.jpg.crdownload" alt="Cloud Computing,NPTEL, October 2024" class="certificate" onclick="enlargeImage(this)">
             </section>
         </div>
     </div>
 
     <footer>
-        <a href="#contact" class="contact-button">Contact Me</a>
+        <a href="mailto:saipolam0222@hotmail.com" class="contact-button">Contact Me</a>
         <p>&copy; 2024 Sai Polam. All Rights Reserved.</p>
+        <p>Rajahmundry, Andhra Pradesh</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Modal for enlarging images -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+
+    <script src="images/script.js"></script>
 </body>
 </html>
+make this more interactive 
